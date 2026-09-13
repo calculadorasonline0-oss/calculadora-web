@@ -1,27 +1,39 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Calculadora de Descuento Online | Precio Final y Descuento</title><meta
-name="description"
-content="Calculadora de descuento online. Calcula cuánto dinero ahorras, el precio final y el porcentaje de descuento entre dos precios de forma rápida y sencilla."
 
-«»
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="theme-color" content="#2563eb">  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --background: #f5f7fb;
-      --card: #ffffff;
-      --text: #172033;
-      --muted: #667085;
-      --border: #e4e7ec;
-      --success: #087443;
-      --danger: #b42318;
-      --shadow: 0 8px 30px rgba(16, 24, 40, 0.08);
-      --radius: 16px;
-    }
+  <title>Calculadora de Descuento Online | CalculaSimple</title>
 
+  <meta
+    name="description"
+    content="Calculadora de descuento online gratuita. Calculá cuánto ahorrás y cuál será el precio final de cualquier producto después de aplicar un descuento."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <meta name="theme-color" content="#2563eb">
+
+  <link
+    rel="canonical"
+    href="https://calculadorasonline0-oss.github.io/calculadora-web/"
+  >
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Calculadora de Descuento Online">
+  <meta
+    property="og:description"
+    content="Calculá descuentos, cuánto ahorrás y el precio final de un producto."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:url"
+    content="https://calculadorasonline0-oss.github.io/calculadora-web/"
+  >
+
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -32,199 +44,178 @@ content="Calculadora de descuento online. Calcula cuánto dinero ahorras, el pre
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--background);
-      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: #f4f6fb;
+      color: #172033;
       line-height: 1.6;
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
-    .container {
-      width: min(100% - 32px, 900px);
-      margin: 0 auto;
-    }
-
-    header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 20px;
     }
 
     .header-inner {
-      padding: 18px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .logo {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 800;
-      text-decoration: none;
-      color: var(--text);
+      letter-spacing: -0.7px;
     }
 
-    .logo span {
-      color: var(--primary);
+    .logo-blue {
+      color: #2563eb;
     }
 
-    main {
-      padding: 28px 0 50px;
+    .container {
+      width: min(900px, calc(100% - 30px));
+      margin: 0 auto;
     }
 
     .hero {
       text-align: center;
-      margin-bottom: 28px;
+      padding: 55px 0 35px;
     }
 
     .hero h1 {
-      margin: 0 0 10px;
-      font-size: clamp(30px, 8vw, 44px);
-      line-height: 1.15;
-      letter-spacing: -0.8px;
+      margin: 0 auto 12px;
+      font-size: clamp(34px, 8vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      max-width: 850px;
     }
 
     .hero p {
-      max-width: 650px;
       margin: 0 auto;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .calculator-grid {
-      display: grid;
-      gap: 20px;
+      color: #687386;
+      font-size: clamp(18px, 4vw, 23px);
+      max-width: 760px;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: clamp(22px, 5vw, 34px);
+      margin-bottom: 28px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
     }
 
     .card h2 {
-      margin: 0 0 6px;
-      font-size: 23px;
-      line-height: 1.3;
+      margin: 0 0 8px;
+      font-size: clamp(25px, 6vw, 32px);
+      line-height: 1.2;
+      letter-spacing: -0.7px;
     }
 
-    .card-description {
-      margin: 0 0 20px;
-      color: var(--muted);
-      font-size: 15px;
+    .card-intro {
+      margin: 0 0 28px;
+      color: #687386;
+      font-size: 17px;
     }
 
     .form-group {
-      margin-bottom: 17px;
+      margin-bottom: 22px;
     }
 
     label {
       display: block;
-      margin-bottom: 7px;
+      margin-bottom: 8px;
+      font-size: 17px;
       font-weight: 700;
-      font-size: 15px;
     }
 
     .input-wrapper {
       position: relative;
     }
 
-    .input-prefix,
-    .input-suffix {
+    .currency-symbol,
+    .percentage-symbol {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--muted);
-      font-weight: 700;
+      color: #697386;
+      font-size: 18px;
+      font-weight: 600;
       pointer-events: none;
     }
 
-    .input-prefix {
-      left: 14px;
+    .currency-symbol {
+      left: 17px;
     }
 
-    .input-suffix {
-      right: 14px;
+    .percentage-symbol {
+      right: 17px;
     }
 
     input {
       width: 100%;
-      min-height: 50px;
-      border: 1px solid #cfd4dc;
-      border-radius: 11px;
-      background: #fff;
-      color: var(--text);
-      font-size: 17px;
-      padding: 12px 14px;
+      min-height: 66px;
+      border: 1px solid #d8dce3;
+      border-radius: 15px;
+      padding: 0 48px 0 50px;
+      font-size: 20px;
+      color: #172033;
+      background: #ffffff;
       outline: none;
-      appearance: none;
-    }
-
-    input.money {
-      padding-left: 34px;
-    }
-
-    input.percent {
-      padding-right: 38px;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+      border-color: #2563eb;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
     }
 
     button {
       width: 100%;
-      min-height: 50px;
+      min-height: 66px;
       border: 0;
-      border-radius: 11px;
-      background: var(--primary);
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
+      border-radius: 15px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 19px;
+      font-weight: 800;
       cursor: pointer;
-      transition: background 0.15s ease, transform 0.1s ease;
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease;
     }
 
     button:hover {
-      background: var(--primary-dark);
+      background: #1d4ed8;
     }
 
     button:active {
       transform: scale(0.99);
     }
 
-    .message {
-      display: none;
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .message.error {
-      display: block;
-      color: var(--danger);
-      background: #fef3f2;
-      border: 1px solid #fecdca;
-    }
-
     .result {
       display: none;
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 12px;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
+      margin-top: 26px;
+      padding: 25px;
+      background: #effcf4;
+      border: 1px solid #c9f1d8;
+      border-radius: 17px;
     }
 
-    .result.visible {
+    .result.show {
       display: block;
     }
 
@@ -232,219 +223,288 @@ content="Calculadora de descuento online. Calcula cuánto dinero ahorras, el pre
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 11px 0;
-      border-bottom: 1px solid #d9f3df;
+      gap: 15px;
+      padding: 13px 0;
     }
 
-    .result-row:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
+    .result-row + .result-row {
+      border-top: 1px solid #d7eee0;
     }
 
     .result-label {
-      color: #475467;
-      font-size: 15px;
+      color: #536172;
+      font-size: 17px;
     }
 
     .result-value {
+      color: #087443;
+      font-size: 27px;
       font-weight: 800;
-      font-size: 19px;
       text-align: right;
-      color: var(--success);
     }
 
     .result-row.final .result-label {
-      font-weight: 700;
-      color: var(--text);
+      color: #172033;
+      font-weight: 800;
     }
 
     .result-row.final .result-value {
-      font-size: 25px;
+      font-size: 31px;
     }
 
-    .content-section {
-      margin-top: 22px;
+    .error {
+      display: none;
+      margin-top: 15px;
+      padding: 13px 15px;
+      border-radius: 12px;
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      color: #be123c;
+      font-weight: 600;
     }
 
-    .content-section h2 {
-      margin: 0 0 12px;
-      font-size: 25px;
-    }
-
-    .content-section p {
-      margin: 0 0 12px;
-      color: #475467;
-    }
-
-    .formula {
-      margin: 18px 0;
-      padding: 17px;
-      border-left: 4px solid var(--primary);
-      background: #eff6ff;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-
-    .formula strong {
+    .error.show {
       display: block;
-      margin-bottom: 6px;
-      color: var(--text);
     }
 
-    .examples {
+    .content h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .content h3 {
+      margin-top: 28px;
+      font-size: 21px;
+    }
+
+    .content p {
+      color: #4f5b6b;
+      font-size: 17px;
+    }
+
+    .example {
+      background: #f7f8fb;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      padding: 15px 18px;
+      margin: 15px 0;
+    }
+
+    .example strong {
+      color: #172033;
+    }
+
+    .faq details {
+      border-top: 1px solid #e5e7eb;
+      padding: 18px 0;
+    }
+
+    .faq details:last-child {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 750;
+      padding-right: 10px;
+    }
+
+    .faq p {
+      margin: 12px 0 0;
+      color: #5c6777;
+    }
+
+    .more-calculators {
       display: grid;
       gap: 12px;
     }
 
-    .example {
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 11px;
-      background: #fff;
-    }
-
-    .example strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .example p {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .faq {
-      border-top: 1px solid var(--border);
-    }
-
-    details {
-      border-bottom: 1px solid var(--border);
-      padding: 15px 0;
-    }
-
-    summary {
-      cursor: pointer;
+    .future-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 62px;
+      padding: 15px 18px;
+      border: 1px solid #e1e5eb;
+      border-radius: 14px;
+      background: #ffffff;
+      color: #263247;
       font-weight: 700;
-      padding-right: 20px;
     }
 
-    details p {
-      margin: 10px 0 0;
-      font-size: 15px;
-    }
-
-    .tools-nav {
-      display: grid;
-      gap: 9px;
-    }
-
-    .pending-link {
-      display: block;
-      padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      text-decoration: none;
-      color: var(--text);
-      background: #fff;
+    .future-link span {
+      color: #7a8494;
+      font-size: 14px;
       font-weight: 600;
     }
 
-    .pending-link:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .pending-link::after {
-      content: " →";
-      color: var(--muted);
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      background: #fff;
-      padding: 24px 0;
-      color: var(--muted);
+    .footer {
       text-align: center;
-      font-size: 14px;
+      padding: 35px 15px 45px;
+      color: #6b7483;
+      font-size: 15px;
     }
 
-    @media (min-width: 700px) {
-      .calculator-grid {
-        grid-template-columns: 1fr 1fr;
+    .footer p {
+      margin: 6px 0;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        padding: 17px 18px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .hero {
+        padding: 42px 0 28px;
       }
 
       .card {
-        padding: 26px;
+        border-radius: 19px;
+        padding: 22px;
       }
 
-      .examples {
-        grid-template-columns: repeat(3, 1fr);
+      .result-row {
+        align-items: flex-start;
       }
 
-      .tools-nav {
-        grid-template-columns: repeat(2, 1fr);
+      .result-label {
+        font-size: 16px;
+      }
+
+      .result-value {
+        font-size: 24px;
       }
     }
-  </style></head><body>  <header>
-    <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Calculadoras Online">
-        Calculadoras<span>Online</span>
+  </style>
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de Descuento",
+    "url": "https://calculadorasonline0-oss.github.io/calculadora-web/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "description": "Calculadora de descuento online gratuita para calcular cuánto dinero se ahorra y cuál es el precio final.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "ARS"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cómo calculo cuánto dinero ahorro con un descuento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Multiplicá el precio original por el porcentaje de descuento y dividí el resultado por 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo calculo el precio final después de un descuento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Restá la cantidad descontada al precio original."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo utilizar otra moneda además de pesos argentinos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. La calculadora funciona con números de cualquier moneda. El símbolo mostrado es el peso argentino como referencia."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="./" class="logo" aria-label="Calculadoras Online - Inicio">
+        Calculadoras<span class="logo-blue">Online</span>
       </a>
     </div>
-  </header>  <main>
-    <div class="container">  <section class="hero">
-    <h1>Calculadora de Descuento</h1>
-    <p>
-      Calcula cuánto ahorras y cuál será el precio final después de aplicar un descuento.
-    </p>
-  </section>
+  </header>
 
-  <section class="calculator-grid" aria-label="Calculadoras de descuento">
+  <main class="container">
+
+    <section class="hero">
+      <h1>Calculadora de Descuento</h1>
+      <p>
+        Calculá cuánto ahorrás y cuál será el precio final
+        después de aplicar un descuento.
+      </p>
+    </section>
 
     <!-- CALCULADORA PRINCIPAL -->
-    <article class="card">
-      <h2>Calcular precio con descuento</h2>
+    <section class="card" aria-labelledby="titulo-calculadora">
 
-      <p class="card-description">
-        Introduce el precio original y el porcentaje de descuento.
+      <h2 id="titulo-calculadora">
+        Calcular precio con descuento
+      </h2>
+
+      <p class="card-intro">
+        Introducí el precio original y el porcentaje de descuento.
       </p>
 
-      <form id="discountForm" novalidate>
+      <form id="discountForm">
 
         <div class="form-group">
-          <label for="originalPrice">Precio original</label>
+          <label for="originalPrice">
+            Precio original
+          </label>
 
           <div class="input-wrapper">
-            <span class="input-prefix">$</span>
+            <span class="currency-symbol" aria-hidden="true">$</span>
 
             <input
               id="originalPrice"
-              class="money"
               type="text"
               inputmode="decimal"
-              placeholder="Ej. 50.000"
               autocomplete="off"
-              aria-describedby="discountError"
+              placeholder="Ej. 50.000"
+              aria-describedby="priceHelp"
             >
           </div>
         </div>
 
         <div class="form-group">
-          <label for="discountPercent">Porcentaje de descuento</label>
+          <label for="discountPercentage">
+            Porcentaje de descuento
+          </label>
 
           <div class="input-wrapper">
+
             <input
-              id="discountPercent"
-              class="percent"
+              id="discountPercentage"
               type="text"
               inputmode="decimal"
-              placeholder="Ej. 20"
               autocomplete="off"
-              aria-describedby="discountError"
+              placeholder="Ej. 20"
+              aria-describedby="discountHelp"
             >
 
-            <span class="input-suffix">%</span>
+            <span class="percentage-symbol" aria-hidden="true">%</span>
+
           </div>
         </div>
 
@@ -453,549 +513,518 @@ content="Calculadora de descuento online. Calcula cuánto dinero ahorras, el pre
         </button>
 
         <div
-          id="discountError"
-          class="message"
+          id="errorMessage"
+          class="error"
           role="alert"
           aria-live="polite"
         ></div>
 
-        <div id="discountResult" class="result" aria-live="polite">
+      </form>
 
-          <div class="result-row">
-            <span class="result-label">Cantidad descontada</span>
-            <span id="discountAmount" class="result-value">$0</span>
-          </div>
+      <div
+        id="discountResult"
+        class="result"
+        aria-live="polite"
+      >
 
-          <div class="result-row final">
-            <span class="result-label">Precio final</span>
-            <span id="finalPrice" class="result-value">$0</span>
-          </div>
+        <div class="result-row">
+          <span class="result-label">
+            Cantidad descontada
+          </span>
 
+          <strong
+            id="discountAmount"
+            class="result-value"
+          >
+            $0
+          </strong>
         </div>
 
-      </form>
-    </article>
+        <div class="result-row final">
+          <span class="result-label">
+            Precio final
+          </span>
 
-    <!-- CALCULADORA INVERSA -->
-    <article class="card">
-      <h2>Calcular porcentaje de descuento</h2>
+          <strong
+            id="finalPrice"
+            class="result-value"
+          >
+            $0
+          </strong>
+        </div>
 
-      <p class="card-description">
-        Averigua qué porcentaje de descuento existe entre un precio original y un precio final.
+      </div>
+
+    </section>
+
+    <!-- SEGUNDA CALCULADORA -->
+    <section class="card" aria-labelledby="titulo-porcentaje">
+
+      <h2 id="titulo-porcentaje">
+        Calcular porcentaje de descuento
+      </h2>
+
+      <p class="card-intro">
+        Averiguá qué porcentaje de descuento existe entre
+        un precio original y un precio final.
       </p>
 
-      <form id="percentageForm" novalidate>
+      <div class="form-group">
 
-        <div class="form-group">
-          <label for="inverseOriginal">Precio original</label>
+        <label for="originalForPercentage">
+          Precio original
+        </label>
 
-          <div class="input-wrapper">
-            <span class="input-prefix">$</span>
+        <div class="input-wrapper">
+          <span class="currency-symbol" aria-hidden="true">$</span>
 
-            <input
-              id="inverseOriginal"
-              class="money"
-              type="text"
-              inputmode="decimal"
-              placeholder="Ej. 50.000"
-              autocomplete="off"
-              aria-describedby="percentageError"
-            >
-          </div>
+          <input
+            id="originalForPercentage"
+            type="text"
+            inputmode="decimal"
+            placeholder="Ej. 50.000"
+          >
         </div>
 
-        <div class="form-group">
-          <label for="inverseFinal">Precio final</label>
+      </div>
 
-          <div class="input-wrapper">
-            <span class="input-prefix">$</span>
+      <div class="form-group">
 
-            <input
-              id="inverseFinal"
-              class="money"
-              type="text"
-              inputmode="decimal"
-              placeholder="Ej. 40.000"
-              autocomplete="off"
-              aria-describedby="percentageError"
-            >
-          </div>
+        <label for="finalForPercentage">
+          Precio final
+        </label>
+
+        <div class="input-wrapper">
+          <span class="currency-symbol" aria-hidden="true">$</span>
+
+          <input
+            id="finalForPercentage"
+            type="text"
+            inputmode="decimal"
+            placeholder="Ej. 40.000"
+          >
         </div>
 
-        <button type="submit">
-          Calcular porcentaje
-        </button>
+      </div>
 
-        <div
-          id="percentageError"
-          class="message"
-          role="alert"
-          aria-live="polite"
-        ></div>
+      <button
+        type="button"
+        id="calculatePercentageButton"
+      >
+        Calcular porcentaje
+      </button>
 
-        <div id="percentageResult" class="result" aria-live="polite">
+      <div
+        id="percentageResult"
+        class="result"
+        aria-live="polite"
+      >
 
-          <div class="result-row final">
-            <span class="result-label">Descuento</span>
-            <span id="percentageValue" class="result-value">0%</span>
-          </div>
+        <div class="result-row final">
+          <span class="result-label">
+            Descuento
+          </span>
 
+          <strong
+            id="percentageValue"
+            class="result-value"
+          >
+            0%
+          </strong>
         </div>
 
-      </form>
-    </article>
+      </div>
 
-  </section>
+      <div
+        id="percentageError"
+        class="error"
+        role="alert"
+        aria-live="polite"
+      ></div>
 
-  <!-- EXPLICACIÓN -->
-  <section class="card content-section">
-    <h2>¿Cómo se calcula un descuento?</h2>
+    </section>
+
+    <!-- EXPLICACIÓN -->
+    <section class="card content">
+
+      <h2>¿Cómo calcular un descuento?</h2>
+
+      <p>
+        Para calcular cuánto dinero representa un descuento,
+        multiplicá el precio original por el porcentaje de descuento
+        y dividí el resultado por 100.
+      </p>
+
+      <h3>Fórmula del descuento</h3>
+
+      <div class="example">
+        <strong>
+          Descuento = Precio original × Porcentaje ÷ 100
+        </strong>
+      </div>
+
+      <h3>Ejemplo: 20% de descuento sobre $50.000</h3>
+
+      <div class="example">
+        <p>
+          $50.000 × 20 ÷ 100 = <strong>$10.000</strong>
+        </p>
+
+        <p>
+          El descuento es de <strong>$10.000</strong>.
+        </p>
+
+        <p>
+          $50.000 − $10.000 =
+          <strong>$40.000</strong>
+        </p>
+
+        <p>
+          El precio final es de <strong>$40.000</strong>.
+        </p>
+      </div>
+
+      <h3>¿Cómo calcular el precio final?</h3>
+
+      <p>
+        Una vez que conocés cuánto dinero representa el descuento,
+        simplemente restalo al precio original.
+      </p>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="card faq">
+
+      <h2>Preguntas frecuentes</h2>
+
+      <details>
+        <summary>
+          ¿Cómo calculo cuánto dinero ahorro?
+        </summary>
+
+        <p>
+          Multiplicá el precio original por el porcentaje de descuento
+          y dividí el resultado por 100.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          ¿Cómo calculo el precio final después del descuento?
+        </summary>
+
+        <p>
+          Restá la cantidad descontada al precio original.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          ¿Puedo utilizar otra moneda además de pesos argentinos?
+        </summary>
+
+        <p>
+          Sí. La calculadora funciona con números de cualquier moneda.
+          El símbolo "$" se utiliza como referencia para pesos argentinos.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          ¿Puedo calcular el porcentaje si conozco el precio original y el final?
+        </summary>
+
+        <p>
+          Sí. Introducí ambos valores en la segunda calculadora
+          para obtener el porcentaje de descuento.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          ¿Qué pasa si introduzco datos incorrectos?
+        </summary>
+
+        <p>
+          La calculadora valida los campos y muestra un mensaje
+          cuando falta información o los valores introducidos
+          no son válidos.
+        </p>
+      </details>
+
+    </section>
+
+    <!-- FUTURAS CALCULADORAS -->
+    <section
+      id="proximas-calculadoras"
+      class="card"
+    >
+
+      <h2>Más calculadoras</h2>
+
+      <div class="more-calculators">
+
+        <a class="future-link" href="#proximas-calculadoras">
+          Calculadora de porcentaje
+          <span>Próximamente</span>
+        </a>
+
+        <a class="future-link" href="#proximas-calculadoras">
+          Calculadora de IVA
+          <span>Próximamente</span>
+        </a>
+
+        <a class="future-link" href="#proximas-calculadoras">
+          Calculadora de aumento
+          <span>Próximamente</span>
+        </a>
+
+        <a class="future-link" href="#proximas-calculadoras">
+          Calculadora de regla de tres
+          <span>Próximamente</span>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
 
     <p>
-      Para calcular un descuento, primero se obtiene la cantidad que representa
-      el porcentaje de descuento sobre el precio original. Después, esa cantidad
-      se resta del precio original.
-    </p>
-
-    <div class="formula">
-      <strong>Cantidad descontada</strong>
-      Precio original × (Porcentaje de descuento ÷ 100)
-    </div>
-
-    <div class="formula">
-      <strong>Precio final</strong>
-      Precio original − Cantidad descontada
-    </div>
-
-    <p>
-      Por ejemplo, si un producto cuesta $50.000 y tiene un descuento del 20%,
-      el descuento es de $10.000 y el precio final es de $40.000.
-    </p>
-  </section>
-
-  <!-- EJEMPLOS -->
-  <section class="card content-section">
-    <h2>Ejemplos prácticos</h2>
-
-    <div class="examples">
-
-      <div class="example">
-        <strong>Ejemplo 1: 10% de descuento</strong>
-        <p>
-          Precio de $20.000 con 10% de descuento.
-          Ahorras $2.000 y pagas $18.000.
-        </p>
-      </div>
-
-      <div class="example">
-        <strong>Ejemplo 2: 25% de descuento</strong>
-        <p>
-          Precio de $40.000 con 25% de descuento.
-          Ahorras $10.000 y pagas $30.000.
-        </p>
-      </div>
-
-      <div class="example">
-        <strong>Ejemplo 3: 50% de descuento</strong>
-        <p>
-          Precio de $60.000 con 50% de descuento.
-          Ahorras $30.000 y pagas $30.000.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="card content-section">
-    <h2>Preguntas frecuentes</h2>
-
-    <div class="faq">
-
-      <details>
-        <summary>¿Cómo calculo cuánto dinero ahorro?</summary>
-        <p>
-          Multiplica el precio original por el porcentaje de descuento dividido por 100.
-          El resultado es la cantidad descontada.
-        </p>
-      </details>
-
-      <details>
-        <summary>¿Cómo calculo el precio final después del descuento?</summary>
-        <p>
-          Resta la cantidad descontada al precio original.
-        </p>
-      </details>
-
-      <details>
-        <summary>¿Puedo utilizar otra moneda además de pesos argentinos?</summary>
-        <p>
-          Sí. La calculadora trabaja con números y no limita el cálculo a una moneda específica.
-          El símbolo $ se utiliza únicamente como referencia visual.
-        </p>
-      </details>
-
-      <details>
-        <summary>¿Puedo calcular el porcentaje si conozco el precio original y el final?</summary>
-        <p>
-          Sí. Utiliza la segunda calculadora. Introduce ambos precios y obtendrás
-          el porcentaje de descuento.
-        </p>
-      </details>
-
-      <details>
-        <summary>¿Qué pasa si introduzco datos incorrectos?</summary>
-        <p>
-          La calculadora valida los campos y muestra un mensaje cuando falta información
-          o los valores introducidos no son válidos.
-        </p>
-      </details>
-
-    </div>
-  </section>
-
-  <!-- FUTURAS HERRAMIENTAS -->
-  <section class="card content-section">
-    <h2>Más calculadoras</h2>
-
-    <nav class="tools-nav" aria-label="Otras calculadoras">
-
-      <a href="#" class="pending-link" aria-disabled="true">
-        Calculadora de porcentaje
-      </a>
-
-      <a href="#" class="pending-link" aria-disabled="true">
-        Calculadora de IVA
-      </a>
-
-      <a href="#" class="pending-link" aria-disabled="true">
-        Calculadora de aumento
-      </a>
-
-      <a href="#" class="pending-link" aria-disabled="true">
-        Calculadora de regla de tres
-      </a>
-
-    </nav>
-  </section>
-
-</div>
-
-  </main>  <footer>
-    <div class="container">
       Calculadoras Online · Herramientas gratuitas y sencillas
-    </div>
-  </footer>  <script>
-    "use strict";
+    </p>
 
+    <p>
+      © <span id="year"></span> Calculadoras Online
+    </p>
+
+  </footer>
+
+  <script>
     /*
-     * ==================================================
-     * PARSER DE NÚMEROS EN FORMATO ARGENTINO
-     * ==================================================
-     *
-     * Ejemplos:
-     *
-     * 50.000       -> 50000
-     * 100.000      -> 100000
-     * 1.500.000    -> 1500000
-     * 50,5         -> 50.5
-     * 50.5         -> 50.5
-     * 50000        -> 50000
-     * 1.234,56     -> 1234.56
-     *
-     * Si aparece una coma, se considera separador decimal
-     * y los puntos se consideran separadores de miles.
-     *
-     * Si solamente aparecen puntos:
-     * - grupos de exactamente 3 cifras después del punto
-     *   se interpretan como miles.
-     * - un único punto seguido de 1 o 2 cifras se interpreta
-     *   como decimal.
-     */
+      Convierte números escritos de forma habitual en Argentina.
 
-    function parseLocalizedNumber(value) {
+      Ejemplos:
+      50.000       → 50000
+      1.500.000    → 1500000
+      25,5         → 25.5
+      25.500,50    → 25500.50
+      50000        → 50000
+    */
+    function parseArgentineNumber(value) {
+
       if (typeof value !== "string") {
         return NaN;
       }
 
       let text = value.trim();
 
-      if (text === "") {
+      if (!text) {
         return NaN;
       }
 
-      // Eliminar espacios normales y espacios no separables.
+      // Eliminar espacios
       text = text.replace(/\s/g, "");
 
-      // Permitir únicamente números, punto, coma y signo negativo.
-      if (!/^-?[\d.,]+$/.test(text)) {
-        return NaN;
+      // Si tiene punto y coma:
+      // punto = miles
+      // coma = decimal
+      if (text.includes(".") && text.includes(",")) {
+        text = text.replace(/\./g, "");
+        text = text.replace(",", ".");
       }
 
-      const isNegative = text.startsWith("-");
-      if (isNegative) {
-        text = text.substring(1);
+      // Si solamente tiene coma:
+      // se interpreta como decimal
+      else if (text.includes(",")) {
+        text = text.replace(",", ".");
       }
 
-      if (text === "") {
-        return NaN;
+      // Si solamente tiene puntos:
+      // múltiples puntos = separadores de miles
+      else if (text.split(".").length > 2) {
+        text = text.replace(/\./g, "");
       }
 
-      let normalized;
-
-      // Caso argentino con coma decimal:
-      // 1.234,56 -> 1234.56
-      // 50,5 -> 50.5
-      if (text.includes(",")) {
-        const parts = text.split(",");
-
-        // Solo puede existir una coma decimal.
-        if (parts.length !== 2) {
-          return NaN;
-        }
-
-        const integerPart = parts[0].replace(/\./g, "");
-        const decimalPart = parts[1];
-
-        if (!/^\d+$/.test(integerPart) || !/^\d+$/.test(decimalPart)) {
-          return NaN;
-        }
-
-        normalized = integerPart + "." + decimalPart;
+      // Un único punto seguido de exactamente 3 dígitos
+      // normalmente representa miles en Argentina.
+      else if (/^\d+\.\d{3}$/.test(text)) {
+        text = text.replace(".", "");
       }
 
-      // Si no hay coma, analizamos los puntos.
-      else if (text.includes(".")) {
-        const parts = text.split(".");
+      const number = Number(text);
 
-        // 1.500.000 -> 1500000
-        // 100.000 -> 100000
-        // 50.5 -> 50.5
-        // 50.55 -> 50.55
-        if (
-          parts.length > 2 ||
-          (parts.length === 2 && parts[1].length === 3)
-        ) {
-          if (!parts.every(part => /^\d+$/.test(part))) {
-            return NaN;
-          }
-
-          // Todos los puntos son separadores de miles.
-          normalized = parts.join("");
-        } else {
-          // Un único punto con 1 o 2 cifras decimales.
-          if (
-            parts.length !== 2 ||
-            !/^\d+$/.test(parts[0]) ||
-            !/^\d+$/.test(parts[1])
-          ) {
-            return NaN;
-          }
-
-          normalized = parts[0] + "." + parts[1];
-        }
-      }
-
-      // Número entero sin separadores.
-      else {
-        if (!/^\d+$/.test(text)) {
-          return NaN;
-        }
-
-        normalized = text;
-      }
-
-      const number = Number(normalized);
-
-      if (!Number.isFinite(number)) {
-        return NaN;
-      }
-
-      return isNegative ? -number : number;
+      return Number.isFinite(number) ? number : NaN;
     }
 
-    /*
-     * ==================================================
-     * FORMATO DE RESULTADOS
-     * ==================================================
-     */
+    function formatCurrency(value) {
 
-    function formatNumber(value) {
       return new Intl.NumberFormat("es-AR", {
+        style: "currency",
+        currency: "ARS",
         minimumFractionDigits: 0,
         maximumFractionDigits: 2
       }).format(value);
     }
 
-    function formatCurrency(value) {
-      return "$" + formatNumber(value);
-    }
-
-    /*
-     * ==================================================
-     * MENSAJES
-     * ==================================================
-     */
-
     function showError(element, message) {
+
       element.textContent = message;
-      element.classList.add("error");
+      element.classList.add("show");
     }
 
-    function clearError(element) {
+    function hideError(element) {
+
       element.textContent = "";
-      element.classList.remove("error");
+      element.classList.remove("show");
     }
 
-    /*
-     * ==================================================
-     * CALCULADORA DE DESCUENTO
-     * ==================================================
-     */
+    // Calculadora principal
+    document
+      .getElementById("discountForm")
+      .addEventListener("submit", function(event) {
 
-    const discountForm = document.getElementById("discountForm");
+        event.preventDefault();
 
-    const originalPrice = document.getElementById("originalPrice");
-    const discountPercent = document.getElementById("discountPercent");
-
-    const discountError = document.getElementById("discountError");
-    const discountResult = document.getElementById("discountResult");
-
-    const discountAmount = document.getElementById("discountAmount");
-    const finalPrice = document.getElementById("finalPrice");
-
-    discountForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      clearError(discountError);
-      discountResult.classList.remove("visible");
-
-      if (
-        originalPrice.value.trim() === "" ||
-        discountPercent.value.trim() === ""
-      ) {
-        showError(
-          discountError,
-          "Completa el precio original y el porcentaje de descuento."
+        const originalPrice = parseArgentineNumber(
+          document.getElementById("originalPrice").value
         );
-        return;
-      }
 
-      const price = parseLocalizedNumber(originalPrice.value);
-      const percent = parseLocalizedNumber(discountPercent.value);
-
-      if (!Number.isFinite(price) || price < 0) {
-        showError(
-          discountError,
-          "Introduce un precio original válido."
+        const discountPercentage = parseArgentineNumber(
+          document.getElementById("discountPercentage").value
         );
-        return;
-      }
 
-      if (!Number.isFinite(percent) || percent < 0 || percent > 100) {
-        showError(
-          discountError,
-          "El descuento debe estar entre 0% y 100%."
-        );
-        return;
-      }
+        const errorMessage =
+          document.getElementById("errorMessage");
 
-      const amount = price * (percent / 100);
-      const total = price - amount;
+        const result =
+          document.getElementById("discountResult");
 
-      discountAmount.textContent = formatCurrency(amount);
-      finalPrice.textContent = formatCurrency(total);
+        hideError(errorMessage);
 
-      discountResult.classList.add("visible");
-    });
+        if (!Number.isFinite(originalPrice) || originalPrice < 0) {
 
-    /*
-     * ==================================================
-     * CALCULADORA INVERSA
-     * ==================================================
-     */
+          result.classList.remove("show");
 
-    const percentageForm = document.getElementById("percentageForm");
+          showError(
+            errorMessage,
+            "Introducí un precio original válido."
+          );
 
-    const inverseOriginal = document.getElementById("inverseOriginal");
-    const inverseFinal = document.getElementById("inverseFinal");
+          return;
+        }
 
-    const percentageError = document.getElementById("percentageError");
-    const percentageResult = document.getElementById("percentageResult");
+        if (
+          !Number.isFinite(discountPercentage) ||
+          discountPercentage < 0 ||
+          discountPercentage > 100
+        ) {
 
-    const percentageValue = document.getElementById("percentageValue");
+          result.classList.remove("show");
 
-    percentageForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+          showError(
+            errorMessage,
+            "Introducí un descuento entre 0% y 100%."
+          );
 
-      clearError(percentageError);
-      percentageResult.classList.remove("visible");
+          return;
+        }
 
-      if (
-        inverseOriginal.value.trim() === "" ||
-        inverseFinal.value.trim() === ""
-      ) {
-        showError(
-          percentageError,
-          "Completa el precio original y el precio final."
-        );
-        return;
-      }
+        const discountAmount =
+          originalPrice * discountPercentage / 100;
 
-      const original = parseLocalizedNumber(inverseOriginal.value);
-      const final = parseLocalizedNumber(inverseFinal.value);
+        const finalPrice =
+          originalPrice - discountAmount;
 
-      if (!Number.isFinite(original) || original <= 0) {
-        showError(
-          percentageError,
-          "El precio original debe ser mayor que 0."
-        );
-        return;
-      }
+        document.getElementById("discountAmount").textContent =
+          formatCurrency(discountAmount);
 
-      if (!Number.isFinite(final) || final < 0) {
-        showError(
-          percentageError,
-          "Introduce un precio final válido."
-        );
-        return;
-      }
+        document.getElementById("finalPrice").textContent =
+          formatCurrency(finalPrice);
 
-      if (final > original) {
-        showError(
-          percentageError,
-          "El precio final no puede ser mayor que el precio original para calcular un descuento."
-        );
-        return;
-      }
+        result.classList.add("show");
+      });
 
-      const percentage = ((original - final) / original) * 100;
 
-      percentageValue.textContent = formatNumber(percentage) + "%";
+    // Calculadora inversa de porcentaje
+    document
+      .getElementById("calculatePercentageButton")
+      .addEventListener("click", function() {
 
-      percentageResult.classList.add("visible");
-    });
+        const original =
+          parseArgentineNumber(
+            document.getElementById("originalForPercentage").value
+          );
 
-    /*
-     * ==================================================
-     * LIMPIAR ERRORES AL MODIFICAR CAMPOS
-     * ==================================================
-     */
+        const final =
+          parseArgentineNumber(
+            document.getElementById("finalForPercentage").value
+          );
 
-    originalPrice.addEventListener("input", function () {
-      clearError(discountError);
-    });
+        const error =
+          document.getElementById("percentageError");
 
-    discountPercent.addEventListener("input", function () {
-      clearError(discountError);
-    });
+        const result =
+          document.getElementById("percentageResult");
 
-    inverseOriginal.addEventListener("input", function () {
-      clearError(percentageError);
-    });
+        hideError(error);
 
-    inverseFinal.addEventListener("input", function () {
-      clearError(percentageError);
-    });
-  </script></body>
+        if (!Number.isFinite(original) || original <= 0) {
+
+          result.classList.remove("show");
+
+          showError(
+            error,
+            "Introducí un precio original válido mayor que 0."
+          );
+
+          return;
+        }
+
+        if (!Number.isFinite(final) || final < 0) {
+
+          result.classList.remove("show");
+
+          showError(
+            error,
+            "Introducí un precio final válido."
+          );
+
+          return;
+        }
+
+        if (final > original) {
+
+          result.classList.remove("show");
+
+          showError(
+            error,
+            "El precio final no puede ser mayor que el precio original para calcular un descuento."
+          );
+
+          return;
+        }
+
+        const percentage =
+          ((original - final) / original) * 100;
+
+        document.getElementById("percentageValue").textContent =
+          percentage.toLocaleString("es-AR", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 2
+          }) + "%";
+
+        result.classList.add("show");
+      });
+
+
+    // Año automático
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
 </html>
